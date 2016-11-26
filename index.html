@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-native-smart-security-text by grazies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-native-smart-security-text</h1>
+      <h2 class="project-tagline">A smart security text for React Native apps</h2>
+      <a href="https://github.com/grazies/react-native-smart-security-text" class="btn">View on GitHub</a>
+      <a href="https://github.com/grazies/react-native-smart-security-text/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/grazies/react-native-smart-security-text/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-native-smart-security-text" class="anchor" href="#react-native-smart-security-text" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react-native-smart-security-text</h1>
+
+<p><a href="https://www.npmjs.com/package/react-native-smart-security-text"><img src="https://img.shields.io/npm/v/react-native-smart-security-text.svg" alt="npm"></a>
+<a href="https://www.npmjs.com/package/react-native-smart-security-text"><img src="https://img.shields.io/npm/dm/react-native-smart-security-text.svg" alt="npm"></a>
+<a href="https://www.npmjs.com/package/react-native-smart-security-text"><img src="https://img.shields.io/npm/dt/react-native-smart-security-text.svg" alt="npm"></a>
+<a href="https://github.com/react-native-component/react-native-smart-security-text/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/react-native-smart-security-text.svg" alt="npm"></a></p>
+
+<p>A smart security text for React Native apps, written in JS for cross-platform support.
+It works on iOS and Android.</p>
+
+<p>This component is compatible with React Native 0.25 and newer.</p>
+
+<h2>
+<a id="preview" class="anchor" href="#preview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Preview</h2>
+
+<p><img src="http://cyqresig.github.io/img/react-native-smart-security-text-preview-ios-v1.0.0.gif" alt="react-native-smart-security-text-preview-ios">
+<img src="http://cyqresig.github.io/img/react-native-smart-security-text-preview-android-v1.0.0.gif" alt="react-native-smart-security-text-preview-android"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install react-native-smart-security-text --save
+</code></pre>
+
+<h2>
+<a id="full-demo" class="anchor" href="#full-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Full Demo</h2>
+
+<p>see <a href="https://github.com/cyqresig/ReactNativeComponentDemos">ReactNativeComponentDemos</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Install the package from npm with <code>npm install react-native-smart-security-text --save</code>.
+Then, require it from your app's JavaScript files with <code>import SecurityText from 'react-native-smart-security-text'</code>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> React, {
+    <span class="pl-smi">Component</span>,
+} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>
+<span class="pl-k">import</span> {
+    <span class="pl-smi">View</span>,
+    <span class="pl-smi">Text</span>,
+    <span class="pl-smi">Image</span>,
+} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native<span class="pl-pds">'</span></span>
+
+<span class="pl-k">import</span> <span class="pl-smi">SecurityText</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native-smart-security-text<span class="pl-pds">'</span></span>
+<span class="pl-k">import</span> <span class="pl-smi">Button</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native-smart-button<span class="pl-pds">'</span></span>
+
+<span class="pl-k">import</span> <span class="pl-smi">image_eye_open</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>../images/eye_open.png<span class="pl-pds">'</span></span>
+<span class="pl-k">import</span> <span class="pl-smi">image_eye_close</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>../images/eye_close.png<span class="pl-pds">'</span></span>
+
+<span class="pl-k">export</span> <span class="pl-v">default</span> <span class="pl-k">class</span> <span class="pl-en">SecurityTextDemo</span> <span class="pl-k">extends</span> <span class="pl-e">Component</span> {
+
+    <span class="pl-c">// 构造</span>
+      <span class="pl-en">constructor</span>(<span class="pl-smi">props</span>) {
+        <span class="pl-v">super</span>(props)
+        <span class="pl-c">// 初始状态</span>
+        <span class="pl-v">this</span>.<span class="pl-smi">state</span> <span class="pl-k">=</span> {
+            isSecurity<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        }
+      }
+
+    <span class="pl-en">render</span>() {
+        <span class="pl-k">return</span> (
+            <span class="pl-k">&lt;</span>View style<span class="pl-k">=</span>{{marginTop<span class="pl-k">:</span> <span class="pl-c1">64</span>, flex<span class="pl-k">:</span> <span class="pl-c1">1</span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, alignItems<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, backgroundColor<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#fff<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>Button
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span> <span class="pl-c1">10</span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, height<span class="pl-k">:</span> <span class="pl-c1">40</span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>,}}
+                    onPress<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_onSecurityChange</span>}
+                <span class="pl-k">&gt;</span>
+                    <span class="pl-k">&lt;</span>Image source<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span> <span class="pl-k">?</span> image_eye_close <span class="pl-k">:</span> image_eye_open} style<span class="pl-k">=</span>{{width<span class="pl-k">:</span> <span class="pl-c1">40</span>, height<span class="pl-k">:</span> <span class="pl-c1">40</span>, marginRight<span class="pl-k">:</span> <span class="pl-c1">3</span>, }}<span class="pl-k">/</span><span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>Button<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        startIndex<span class="pl-k">:</span> <span class="pl-c1">3</span>,
+                        endIndex<span class="pl-k">:</span> <span class="pl-c1">7</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    <span class="pl-c1">15912390987</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        startIndex<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+                        endIndex<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    <span class="pl-c1">15912390987</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        startIndex<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+                        endIndex<span class="pl-k">:</span> <span class="pl-c1">12</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    <span class="pl-c1">15912390987</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        startIndex<span class="pl-k">:</span> <span class="pl-c1">11</span>,
+                        endIndex<span class="pl-k">:</span> <span class="pl-c1">12</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    <span class="pl-c1">15912390987</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        startIndex<span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">7</span>,
+                        endIndex<span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">3</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    <span class="pl-c1">15912390987</span>
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        length<span class="pl-k">:</span> <span class="pl-c1">4</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    username
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>SecurityText
+                    securityOptions<span class="pl-k">=</span>{{
+                        isSecurity<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>,
+                        length<span class="pl-k">:</span> <span class="pl-c1">10</span>,
+                    }}
+                    style<span class="pl-k">=</span>{{margin<span class="pl-k">:</span><span class="pl-c1">10</span>, fontSize<span class="pl-k">:</span> <span class="pl-c1">16</span>, color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    address
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>SecurityText<span class="pl-k">&gt;</span>
+            <span class="pl-k">&lt;</span><span class="pl-k">/</span>View<span class="pl-k">&gt;</span>
+        )
+    }
+
+    <span class="pl-en">_onSecurityChange</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {
+        <span class="pl-k">let</span> isSecurity <span class="pl-k">=</span> <span class="pl-k">!</span><span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">isSecurity</span>
+        <span class="pl-v">this</span>.<span class="pl-en">setState</span>({
+            isSecurity,
+        })
+    }
+}</pre></div>
+
+<h2>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Props</h2>
+
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...Text.propTypes</td>
+<td></td>
+<td>Yes</td>
+<td></td>
+<td>see <a href="https://facebook.github.io/react-native/docs/text.html">react-native documents</a>
+</td>
+</tr>
+<tr>
+<td>securityOptions</td>
+<td>shape</td>
+<td>Yes</td>
+<td>{}</td>
+<td></td>
+</tr>
+<tr>
+<td>securityOptions.isSecurity</td>
+<td>bool</td>
+<td>Yes</td>
+<td>false</td>
+<td>when the value is true, origin text will be replaced with security text</td>
+</tr>
+<tr>
+<td>securityOptions.startIndex</td>
+<td>number</td>
+<td>Yes</td>
+<td>0</td>
+<td>determines the startIndex of security text</td>
+</tr>
+<tr>
+<td>securityOptions.endIndex</td>
+<td>number</td>
+<td>Yes</td>
+<td></td>
+<td>determines the endIndex of security text</td>
+</tr>
+<tr>
+<td>securityOptions.length</td>
+<td>number</td>
+<td>Yes</td>
+<td></td>
+<td>determines the length of security text</td>
+</tr>
+<tr>
+<td>securityOptions.securityChar</td>
+<td>string</td>
+<td>Yes</td>
+<td>'*'</td>
+<td>determines the securityChar of security text</td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/grazies/react-native-smart-security-text">React-native-smart-security-text</a> is maintained by <a href="https://github.com/grazies">grazies</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
